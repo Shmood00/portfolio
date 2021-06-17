@@ -1,0 +1,805 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+}
+
+header {
+  height: 100vh;
+  background: url("./images/new_back.jpg");
+  background-size: cover;
+}
+
+.landing {
+  display: flex;
+  height: 20vh;
+  width: 40vh;
+  left: 10%;
+  top: 40%;
+  position: absolute;
+}
+
+.landing-text {
+  font-size: 2rem;
+}
+
+.land-text {
+  color: white;
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  list-style: none;
+  background-color: rgba(231, 230, 236, 0.7);
+  z-index: 1;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-bottom: 2px solid black;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+nav li {
+  overflow: hidden;
+  height: 25px;
+}
+
+a.active::after {
+  transform: translateX(0%);
+}
+
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  background: black;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.intro-text {
+  color: white;
+  font-size: 2rem;
+}
+
+.hide {
+  background: black;
+  overflow: hidden;
+}
+
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 200vh;
+    background: url("./images/new_back.jpg");
+    background-size: cover;
+  }
+
+  .intro {
+    display: flex;
+    background: black;
+    height: 100vh;
+    width: 100% !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .intro-text {
+    padding-bottom: 90px;
+    font-size: 1rem;
+  }
+
+  .hide svg {
+    height: 350px;
+    width: 350px;
+  }
+
+  /*#about {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    color: white;
+  }*/
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-intro {
+    justify-content: center;
+    align-items: center;
+    top: 0 !important;
+    left: 15% !important;
+    width: 30vh !important;
+    height: 30vh !important;
+  }
+
+  .about-text {
+    font-size: 20px !important;
+  }
+
+  .about-image {
+    top: -10% !important;
+    left: 10% !important;
+  }
+
+  .about-image svg {
+    height: 250px !important;
+    width: 350px !important;
+  }
+
+  .projects-layout {
+    display: flex !important;
+    justify-content: space-evenly !important;
+    flex-direction: column;
+    height: 200vh !important;
+    width: 100% !important;
+    position: relative !important;
+    top: 25vh !important;
+    background-color: black;
+  }
+
+  .url-shortener {
+    display: flex;
+    position: relative;
+    background-color: rgba(133, 142, 145, 0.25);
+    width: 95% !important;
+    height: 40vh !important;
+    top: -15% !important;
+    left: 2% !important;
+    border-radius: 10px;
+  }
+
+  #url-short-button {
+    display: flex;
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    width: 20%;
+  }
+
+  .covid-data {
+    display: flex;
+    position: relative;
+    background-color: rgba(133, 142, 145, 0.25);
+    width: 95% !important;
+    height: 40vh !important;
+    border-radius: 10px;
+    top: -23% !important;
+    left: 2% !important;
+  }
+
+  .covid-data img {
+    display: none;
+  }
+
+  .macaroon-file-share {
+    display: flex;
+    position: relative;
+    background-color: rgba(133, 142, 145, 0.25);
+    width: 95% !important;
+    height: 40vh !important;
+    border-radius: 10px;
+    top: -31% !important;
+    left: 2% !important;
+  }
+
+  #macaroon-git-button {
+    top: 60%;
+  }
+
+  .projects-layout-more {
+    display: flex !important;
+    justify-content: space-evenly !important;
+    flex-direction: column;
+    height: 100vh !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 150vh !important;
+    background: none;
+  }
+
+  .permission-based-2fa {
+    display: flex;
+    position: relative;
+    background-color: rgba(133, 142, 145, 0.25);
+    width: 95% !important;
+    height: 40vh !important;
+    border-radius: 10px;
+    top: -33% !important;
+    left: 2% !important;
+  }
+
+  #contact {
+    position: relative;
+    display: flex !important;
+    height: 100vh;
+    top: 100vh;
+  }
+
+  .contact-image {
+    left: -6%;
+  }
+
+  #contact svg {
+    height: 500px;
+    width: 500px;
+  }
+
+  #contact-intro {
+    top: -30% !important;
+  }
+
+  .project-landing {
+    width: 90% !important;
+  }
+
+  .project-image-landing {
+    top: 105% !important;
+    width: 90% !important;
+    left: 5% !important;
+  }
+
+  .project-landing-text.long {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: solid 2px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .project-info-body.long {
+    position: relative;
+    width: 100%;
+    top: 20%;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.5);
+    overflow-y: auto;
+  }
+
+  .modal.open img {
+    height: 400px;
+    width: 500px;
+  }
+}
+
+.slider {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  z-index: 2;
+}
+
+#about,
+#projects,
+#contact {
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: white;
+}
+
+#about {
+  background-color: black;
+}
+
+.about-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.about-intro {
+  position: relative;
+  height: 50vh;
+  width: 70vh;
+  top: 40%;
+}
+
+.about-image {
+  position: relative;
+  height: 20vh;
+  top: 30%;
+}
+
+.about-image svg {
+  height: 450px;
+  width: 450px;
+}
+
+.about-text {
+  font-size: 2rem;
+}
+
+.about-info {
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+/*LINKS FOR CONTACT PAGE*/
+.about-info a {
+  color: white;
+}
+
+#projects {
+  background-color: black;
+  color: white;
+}
+
+.projects-layout {
+  display: flex;
+  justify-content: space-evenly;
+  height: 50%;
+  width: 100%;
+  position: relative;
+  top: 10vh;
+}
+
+.projects-layout a {
+  color: white;
+  text-decoration: none;
+}
+
+.projects-layout a:hover {
+  text-decoration: underline;
+}
+
+.url-shortener {
+  display: flex;
+  position: relative;
+  background-color: rgba(133, 142, 145, 0.25);
+  width: 30%;
+  height: 40vh;
+  top: 10%;
+  border-radius: 10px;
+}
+
+.github-button-div {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 20%;
+}
+
+.url-text {
+  font-size: 20px;
+}
+
+.url-text h2 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.url-description {
+  display: inline-block;
+  transform: translateY(100%);
+  padding-left: 30px;
+}
+
+.covid-data {
+  display: flex;
+  position: relative;
+  background-color: rgba(133, 142, 145, 0.25);
+  width: 30%;
+  /*height: 60vh;*/
+  height: 40vh;
+  top: 10%;
+  border-radius: 10px;
+}
+
+.covid-text {
+  font-size: 20px;
+}
+
+.covid-text h2 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.covid-description {
+  display: inline-block;
+  transform: translateY(100%);
+  padding-left: 30px;
+}
+
+.macaroon-file-share {
+  display: flex;
+  position: relative;
+  background-color: rgba(133, 142, 145, 0.25);
+  width: 30%;
+  height: 40vh;
+  top: 10%;
+  border-radius: 10px;
+}
+
+.macaroon-text {
+  font-size: 20px;
+}
+
+.macaroon-text h2 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.macaroon-description {
+  display: inline-block;
+  transform: translateY(100%);
+  padding-left: 30px;
+}
+/*
+.covid-gif {
+  display: flex;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  height: 300px;
+  width: 400px;
+}*/
+
+/*#covid-git-button {
+  display: flex;
+  position: absolute;
+  top: 85%;
+  left: 40%;
+  width: 20%;
+}*/
+
+.projects-layout-more {
+  display: flex;
+  justify-content: space-evenly;
+  height: 50%;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  top: 60%;
+}
+
+.permission-based-2fa {
+  display: flex;
+  position: relative;
+  background-color: rgba(133, 142, 145, 0.25);
+  width: 30%;
+  height: 40vh;
+  top: 10%;
+  border-radius: 10px;
+}
+
+.pb-text {
+  font-size: 20px;
+}
+
+.pb-text h2 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.pb-description {
+  display: inline-block;
+  transform: translateY(100%);
+  padding-left: 30px;
+}
+
+/* URL-Shortening Page
+.url-landing {
+  display: flex;
+  height: 80vh;
+  width: 50%;
+  left: 5%;
+  top: 15%;
+  border: solid 2px black;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.url-landing-text {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  background-color: black;
+  font-size: 2rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.url-landing-text h2 {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.url-land-text {
+  color: white;
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.url-info-body {
+  position: relative;
+  width: 100%;
+  top: 10%;
+  height: 90%;
+}
+
+.url-body-text {
+  display: inline-block;
+  color: white;
+  transform: translateY(100%);
+}
+
+.url-info-body p {
+  padding-top: 10px;
+  padding-left: 10px;
+}*/
+
+#contact {
+  background-color: black;
+}
+
+.contact-image {
+  position: relative;
+  height: 20vh;
+  top: 20%;
+}
+
+.contact-info a {
+  color: white;
+}
+
+.contact-info {
+  display: grid;
+  transform: translateY(100%);
+}
+
+/*
+.contact-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact-intro {
+  position: relative;
+  height: 50vh;
+  width: 70vh;
+  top: 30%;
+  background-color: lightblue;
+}
+
+.contact-info {
+  display: inline-block;
+  transform: translateY(100%);
+}*/
+
+/* Individual projects page */
+/* COVID-19 Data Visualization page */
+.project-landing {
+  display: flex;
+  height: 80vh;
+  width: 50%;
+  left: 5%;
+  top: 15%;
+  /*background-color: lightblue;*/
+  position: absolute;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.project-landing-text {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: solid 2px rgba(0, 0, 0, 0.3);
+  font-size: 2rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.project-landing-text h2 {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.project-landing-text a {
+  text-decoration: none;
+}
+
+.project-land-text {
+  color: white;
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.project-info-body {
+  position: relative;
+  width: 100%;
+  top: 10%;
+  height: 90%;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow-y: auto;
+}
+
+.project-body-text {
+  display: inline-block;
+
+  transform: translateY(100%);
+}
+
+.project-info-body p {
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.project-content {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.project-image-landing {
+  display: flex;
+  height: 80vh;
+  width: 30%;
+  left: 62%;
+  top: 15%;
+  position: absolute;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.project-image-header {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: solid 2px rgba(0, 0, 0, 0.3);
+  font-size: 2rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.project-header-text {
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.project-image-header h2 {
+  color: white;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.project-images {
+  position: relative;
+  width: 100%;
+  top: 10%;
+  height: 90%;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow-y: auto;
+}
+
+.all-images {
+  display: inline-block;
+  align-items: center;
+  padding-top: 2%;
+  padding-left: 5%;
+  width: 100%;
+}
+
+.project-image-items {
+  display: inline-block;
+  overflow: hidden;
+  transform: translateY(100%);
+}
+
+.project-image-items img:hover {
+  transform: scale(1.1);
+}
+
+.project-images img {
+  height: 150px;
+  width: 250px;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.modal {
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease-out;
+}
+
+.modal.open {
+  opacity: 1;
+  pointer-events: all;
+  overflow: auto;
+}
+
+.full-img {
+  position: absolute;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.25s ease-out;
+}
+
+.full-img.open {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal p {
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -5%);
+}
